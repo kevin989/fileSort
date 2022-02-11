@@ -1,4 +1,4 @@
-#%%
+
 from PIL import Image
 from pathlib import Path
 import shutil
@@ -16,7 +16,7 @@ import os
 #6. Continue for next file until no more files
 
 #1. iterate over each files in folder & 2. get metadata
-#%%
+
 def get_meta(file):
     supported_type = ['.BLP', '.JPG', '.BMP', '.DDS', '.DIB', '.EPS', '.GIF', 
     '.ICNS', '.ICO', '.PNG', '.TIFF', '.WEBP']
@@ -24,7 +24,8 @@ def get_meta(file):
         with Image.open(file) as im:
             meta_data = im.getexif()
     return(meta_data)
-#%%
+
+
 def get_date(path):
     folder_path = Path(path)
     for file in folder_path.iterdir():
@@ -38,6 +39,6 @@ def get_date(path):
         except KeyError:
                 continue
     print(year, month)
-#%%
+
 get_date("C:\\Users\\Kevin\\Pictures")
-# %%
+
